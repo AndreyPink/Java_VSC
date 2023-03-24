@@ -21,6 +21,7 @@ public class ex_1 {
         }
 System.out.printf("Сумма арифм прогрессии = %d\n", arProgr);
 System.out.printf("Сумма геометр прогрессии = %d\n", geProgr);
+sc.close();
     }
     
 }
