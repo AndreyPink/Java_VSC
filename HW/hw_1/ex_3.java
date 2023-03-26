@@ -24,7 +24,9 @@ public class ex_3 {
         } else if (sym.equals("*")) {
             System.out.printf("%d * %d = %d", num1, num2, num1 * num2);
         } else if (sym.equals("/")) {
-            System.out.printf("%d / %d = %f", num1, num2, num1 / num2 + (num1 % num2)*0.1);
+            double num_1 = num1;
+            double num_2 = num2;
+            System.out.printf("%d / %d = %f", num1, num2, num_1/num_2);
         } else {
             System.out.println("Ошибка ввода");
         }
