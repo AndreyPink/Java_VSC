@@ -19,7 +19,7 @@ public class ex_4 {
         String a = sc.nextLine();
         System.out.println("Введите второе двузначное слагаемое: ");
         String b = sc.nextLine();
-        System.out.println("Введите сумму слагаемых: ");
+        System.out.println("Введите двузначную сумму слагаемых: ");
         String c = sc.nextLine();
 
         int[] newMas = new int[6];
