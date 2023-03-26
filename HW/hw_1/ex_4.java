@@ -11,6 +11,7 @@ package HW.hw_1;
 import java.util.Scanner;
 
 public class ex_4 {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean check = false;
@@ -19,11 +20,11 @@ public class ex_4 {
         System.out.println("Введите второе двузначное слагаемое: ");
         String b = sc.nextLine();
         System.out.println("Введите сумму слагаемых: ");
-        int c = sc.nextInt();
+        String c = sc.nextLine();
 
-        int[] newMas = new int[4];
+        int[] newMas = new int[6];
 
-        char[] Mas = (a + b).toCharArray();
+        char[] Mas = (a + b + c).toCharArray();
         for (int j = 0; j < 10; j++) {
             for (int i = 0; i < Mas.length; i++) {
                 if (Character.isDigit(Mas[i])) {
@@ -31,9 +32,9 @@ public class ex_4 {
                 } else
                     newMas[i] = j;
             }
-            if ((newMas[0] * 10 + newMas[1]) + (newMas[2] * 10 + newMas[3]) == c) {
+            if ((newMas[0] * 10 + newMas[1]) + (newMas[2] * 10 + newMas[3]) == newMas[4] * 10 + newMas[5]) {
                 System.out.printf("Решение данного уравнения: %d + %d = %d", (newMas[0] * 10 + newMas[1]),
-                        (newMas[2] * 10 + newMas[3]), c);
+                        (newMas[2] * 10 + newMas[3]), (newMas[4] * 10 + newMas[5]));
                 check = true;
             }
         }
