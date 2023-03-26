@@ -17,16 +17,14 @@ public class ex_3 {
         System.out.println("Введите число 2: ");
         int num2 = sc.nextInt();
 
-        System.out.println("/" + sym + "/");
-
-        if (sym == "+") {
+        if (sym.equals("+")) {
             System.out.printf("%d + %d = %d", num1, num2, num1 + num2);
-        } else if (sym == "-") {
+        } else if (sym.equals("-")) {
             System.out.printf("%d - %d = %d", num1, num2, num1 - num2);
-        } else if (sym == "*") {
+        } else if (sym.equals("*")) {
             System.out.printf("%d * %d = %d", num1, num2, num1 * num2);
-        } else if (sym == "/") {
-            System.out.printf("%d / %d = %d", num1, num2, num1 / num2);
+        } else if (sym.equals("/")) {
+            System.out.printf("%d / %d = %f", num1, num2, num1 / num2 + (num1 % num2)*0.1);
         } else {
             System.out.println("Ошибка ввода");
         }
