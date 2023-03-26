@@ -8,6 +8,37 @@
 
 package HW.hw_1;
 
+import java.util.Scanner;
+
 public class ex_4 {
-    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        boolean check = false;
+        System.out.println("Введите первое двузначное слагаемое: ");
+        String a = sc.nextLine();
+        System.out.println("Введите второе двузначное слагаемое: ");
+        String b = sc.nextLine();
+        System.out.println("Введите сумму слагаемых: ");
+        int c = sc.nextInt();
+
+        int[] newMas = new int[4];
+
+        char[] Mas = (a + b).toCharArray();
+        for (int j = 0; j < 10; j++) {
+            for (int i = 0; i < Mas.length; i++) {
+                if (Character.isDigit(Mas[i])) {
+                    newMas[i] = Character.digit(Mas[i], 10);
+                } else
+                    newMas[i] = j;
+            }
+            if ((newMas[0] * 10 + newMas[1]) + (newMas[2] * 10 + newMas[3]) == c) {
+                System.out.printf("Решение данного уравнения: %d + %d = %d", (newMas[0] * 10 + newMas[1]),
+                        (newMas[2] * 10 + newMas[3]), c);
+                check = true;
+            }
+        }
+        if (check == false)
+            System.out.println("У данного уравнения нет решения");
+        sc.close();
+    }
 }
