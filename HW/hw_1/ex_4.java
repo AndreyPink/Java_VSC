@@ -1,18 +1,27 @@
-// (ДОПОЛНИТЕЛЬНАЯ) +Задано уравнение вида q + w = e, q, w, e >= 0.
-// Некоторые цифры могут быть заменены знаком вопроса, например 2? + ?5 = 69 (пользователь).
-// Требуется восстановить выражение до верного равенства.
-// Предложить хотя бы одно решение или сообщить, что его нет.
-// под знаками вопроса - одинаковые цифра
-// Ввод: 2? + ?5 = 69
-// Вывод: 24 + 45 = 69
-
 package HW.hw_1;
 
 import java.util.Scanner;
 
 public class ex_4 {
 
+    public static int convert(String num, int j) {
+        int[] Mas = new int[num.length()];
+        for (int i = 0; i < num.length(); i++) {
+
+            if (Character.isDigit(num.toCharArray()[i]))
+                Mas[i] = Character.digit(num.toCharArray()[i], 10);
+            else
+                Mas[i] = j;
+        }
+        StringBuilder string = new StringBuilder();
+        for (int i = 0; i < Mas.length; i++)
+            string.append(Mas[i]);
+        int newNum = Integer.parseInt(string.toString());
+        return newNum;
+    }
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         boolean check = false;
         System.out.println("Введите первое двузначное слагаемое: ");
@@ -22,19 +31,11 @@ public class ex_4 {
         System.out.println("Введите двузначную сумму слагаемых: ");
         String c = sc.nextLine();
 
-        int[] newMas = new int[6];
-
-        char[] Mas = (a + b + c).toCharArray();
         for (int j = 0; j < 10; j++) {
-            for (int i = 0; i < Mas.length; i++) {
-                if (Character.isDigit(Mas[i])) {
-                    newMas[i] = Character.digit(Mas[i], 10);
-                } else
-                    newMas[i] = j;
-            }
-            if ((newMas[0] * 10 + newMas[1]) + (newMas[2] * 10 + newMas[3]) == newMas[4] * 10 + newMas[5]) {
-                System.out.printf("Решение данного уравнения: %d + %d = %d", (newMas[0] * 10 + newMas[1]),
-                        (newMas[2] * 10 + newMas[3]), (newMas[4] * 10 + newMas[5]));
+
+            if (convert(a, j) + convert(b, j) == convert(c, j)) {
+                System.out.printf("Решение данного уравнения: %d + %d = %d", convert(a, j), convert(b, j),
+                        convert(c, j));
                 check = true;
             }
         }
