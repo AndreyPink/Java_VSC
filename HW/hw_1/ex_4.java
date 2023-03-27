@@ -24,11 +24,11 @@ public class ex_4 {
 
         Scanner sc = new Scanner(System.in);
         boolean check = false;
-        System.out.println("Введите первое двузначное слагаемое: ");
+        System.out.println("Введите первое слагаемое: ");
         String a = sc.nextLine();
-        System.out.println("Введите второе двузначное слагаемое: ");
+        System.out.println("Введите второе слагаемое: ");
         String b = sc.nextLine();
-        System.out.println("Введите двузначную сумму слагаемых: ");
+        System.out.println("Введите сумму слагаемых: ");
         String c = sc.nextLine();
 
         for (int j = 0; j < 10; j++) {
