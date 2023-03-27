@@ -6,7 +6,6 @@
 // Ввод: 2? + ?5 = 69
 // Вывод: 24 + 45 = 69
 
-
 // РАБОТАЕТ С ЛЮБЫМИ ЧИСЛАМИ !!!!!
 
 package HW.hw_1;
@@ -16,17 +15,14 @@ import java.util.Scanner;
 public class ex_4 {
 
     public static int convert(String num, int j) {
-        int[] Mas = new int[num.length()];
+        StringBuilder string = new StringBuilder();
         for (int i = 0; i < num.length(); i++) {
 
             if (Character.isDigit(num.toCharArray()[i]))
-                Mas[i] = Character.digit(num.toCharArray()[i], 10);
+                string.append(num.toCharArray()[i]);
             else
-                Mas[i] = j;
+                string.append(j);
         }
-        StringBuilder string = new StringBuilder();
-        for (int i = 0; i < Mas.length; i++)
-            string.append(Mas[i]);
         int newNum = Integer.parseInt(string.toString());
         return newNum;
     }
@@ -45,7 +41,7 @@ public class ex_4 {
         for (int j = 0; j < 10; j++) {
 
             if (convert(a, j) + convert(b, j) == convert(c, j)) {
-                System.out.printf("Решение данного уравнения: %d + %d = %d", convert(a, j), convert(b, j),
+                System.out.printf("Решение данного уравнения: %d + %d = %d\n", convert(a, j), convert(b, j),
                         convert(c, j));
                 check = true;
             }
