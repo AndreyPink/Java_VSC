@@ -49,5 +49,5 @@ public class ex_4 {
         if (check == false)
             System.out.println("У данного уравнения нет решения");
         sc.close();
-    }
+        }
 }
