@@ -25,7 +25,7 @@ public class ex_2 {
             String str;
             File file = new File(path);
             BufferedReader bf = new BufferedReader(new FileReader(file));
-            while ((str=bf.readLine())!= null) {
+            while ((str = bf.readLine()) != null) {
                 line += str + "\n";
             }
             bf.close();
@@ -36,12 +36,19 @@ public class ex_2 {
     }
 
     public static void parser(String line) {
-        JSONParser parser = new JSONParser();
-
+        String[] parseString = line.split("\n");
+        for (String string : parseString) {
+            String[] studentString = string.split("(:|,)");
+            for (int i = 0; i < studentString.length; i++) {
+                studentString[i] = studentString[i].replace("\"", "");
+            }
+            System.out.println("Студент " + studentString[1] + " получил " + studentString[3] + " по предмету "
+                    + studentString[5]);
+        }
     }
 
     public static void main(String[] args) {
         String path = "HW/hw_2/school.txt";
-        System.out.println(readFile(path));
+        parser(readFile(path));
     }
 }
