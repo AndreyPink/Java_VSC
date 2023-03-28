@@ -36,14 +36,20 @@ public class ex_2 {
     }
 
     public static void parser(String line) {
+        
+        String[] text = new String[] {"Студент", "получил", "по предмету"};
         String[] parseString = line.split("\n");
         for (String string : parseString) {
             String[] studentString = string.split("(:|,)");
             for (int i = 0; i < studentString.length; i++) {
                 studentString[i] = studentString[i].replace("\"", "");
             }
-            System.out.println("Студент " + studentString[1] + " получил " + studentString[3] + " по предмету "
-                    + studentString[5]);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < text.length; i++) {
+                sb.append(text[i] + " ");
+                sb.append(studentString[i*2 + 1] + " ");
+            }
+            System.out.println(sb.toString());
         }
     }
 
