@@ -9,6 +9,8 @@ import java.util.Scanner;
 public class ex_2 {
 
     public static String compressString(String str) {
+        if (str.length() < 2)
+            return str;
         StringBuilder result = new StringBuilder();
         int count = 1;
         char[] charArray = str.toCharArray();
