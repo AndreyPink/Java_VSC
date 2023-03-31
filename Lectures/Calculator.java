@@ -1,4 +1,4 @@
-package HW.hw_3;
+package Lectures;
 
 import java.util.Scanner;
 
