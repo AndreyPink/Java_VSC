@@ -27,27 +27,27 @@ public class ex_1 {
     }
 
     public void merge(int[] leftArr, int[] rightArr, int[] resultArray) {
-        int left = 0, right = 0, res = 0;
-        while (left < leftArr.length && right < rightArr.length) {
-            if (leftArr[left] <= rightArr[right]) {
-                resultArray[res] = leftArr[left];
-                left++;
+        int leftI = 0, rightI = 0, resI = 0;
+        while (leftI < leftArr.length && rightI < rightArr.length) {
+            if (leftArr[leftI] <= rightArr[rightI]) {
+                resultArray[resI] = leftArr[leftI];
+                leftI++;
             } else {
-                resultArray[res] = rightArr[right];
-                right++;
+                resultArray[resI] = rightArr[rightI];
+                rightI++;
             }
-            res++;
+            resI++;
         }
-        while (left < leftArr.length) {
-            resultArray[res] = leftArr[left];
-            left++;
-            res++;
+        while (leftI < leftArr.length) {
+            resultArray[resI] = leftArr[leftI];
+            leftI++;
+            resI++;
         }
 
-        while (right < rightArr.length) {
-            resultArray[res] = rightArr[right];
-            right++;
-            res++;
+        while (rightI < rightArr.length) {
+            resultArray[resI] = rightArr[rightI];
+            rightI++;
+            resI++;
         }
     }
 
