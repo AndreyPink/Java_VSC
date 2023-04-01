@@ -15,11 +15,11 @@ public class ex_3 {
             list.add(random.nextInt(10));
         }
         System.out.println("Целочисленный список чисел: " + list);
-        
+
         Integer[] arrayList = list.toArray(new Integer[0]);
         Arrays.sort(arrayList);
 
-        System.out.println("\nМинимальное число в списке: " + arrayList[0]);
+        System.out.println("Минимальное число в списке: " + arrayList[0]);
         System.out.println("Максимальное число в списке: " + arrayList[arrayList.length - 1]);
         int sum = 0;
         for (Integer elem : arrayList) {
