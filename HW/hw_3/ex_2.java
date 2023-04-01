@@ -13,6 +13,7 @@ public class ex_2 {
             list.add(random.nextInt(10));
         }
         System.out.println("Произвольный список чисел: " + list);
+        
         for (int i = list.size()-1; i >= 0; i--) {
                 if (list.get(i)%2 == 0) {
                 list.remove(i);
