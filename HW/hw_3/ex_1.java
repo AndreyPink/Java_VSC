@@ -17,7 +17,7 @@ public class ex_1 {
     }
 
     public static int[] mergeSort(int[] array) {
-        if (array.length <= 1)
+        if (array.length < 2)
             return array;
         int[] leftArr = Arrays.copyOfRange(array, 0, array.length / 2);
         int[] rightArr = Arrays.copyOfRange(array, leftArr.length, array.length);
