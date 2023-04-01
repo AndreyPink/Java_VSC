@@ -6,7 +6,18 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class ex_1_old {
-
+    public static void main(String[] args) {
+        Random random = new Random();
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100);
+        }
+        System.out.println("Первоначальный массив: " + Arrays.toString(array));
+        ex_1_old m = new ex_1_old();
+        m.mergeSort(array);
+        System.out.println("Отсортированный массив: " + Arrays.toString(array));
+    }
+    
     public void mergeSort(int[] arr) {
         if (arr.length < 2) {
             return;
@@ -49,17 +60,5 @@ public class ex_1_old {
             rightI++;
             resI++;
         }
-    }
-
-    public static void main(String[] args) {
-        Random random = new Random();
-        int[] array = new int[10];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(100);
-        }
-        System.out.println("Первоначальный массив: " + Arrays.toString(array));
-        ex_1_old m = new ex_1_old();
-        m.mergeSort(array);
-        System.out.println("Отсортированный массив: " + Arrays.toString(array));
     }
 }
