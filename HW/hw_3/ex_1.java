@@ -19,26 +19,20 @@ public class ex_1 {
     public static int[] mergeSort(int[] array) {
         if (array.length <= 1)
             return array;
-        int[] left = Arrays.copyOfRange(array, 0, array.length / 2);
-        int[] right = Arrays.copyOfRange(array, left.length, array.length);
-        return merge(mergeSort(left), mergeSort(right));
+        int[] leftArr = Arrays.copyOfRange(array, 0, array.length / 2);
+        int[] rightArr = Arrays.copyOfRange(array, leftArr.length, array.length);
+        return merge(mergeSort(leftArr), mergeSort(rightArr));
     }
 
-    private static int[] merge(int[] left, int[] right) {
-        int resIn = 0, leftIn = 0, rightIn = 0;
-        int[] result = new int[left.length + right.length];
+    private static int[] merge(int[] leftArr, int[] rightArr) {
+        int resInd = 0, leftInd = 0, rightInd = 0;
+        int[] result = new int[leftArr.length + rightArr.length];
 
-        while (leftIn < left.length && rightIn < right.length)
-            if (left[leftIn] < right[rightIn])
-                result[resIn++] = left[leftIn++];
-            else
-                result[resIn++] = right[rightIn++];
+        while (leftInd < leftArr.length && rightInd < rightArr.length)
+            result[resInd++] = (leftArr[leftInd] < rightArr[rightInd]) ? leftArr[leftInd++] : rightArr[rightInd++];
 
-        while (resIn < result.length)
-            if (leftIn != left.length)
-                result[resIn++] = left[leftIn++];
-            else
-                result[resIn++] = right[rightIn++];
+        while (resInd < result.length)
+            result[resInd++] = (leftInd != leftArr.length) ? leftArr[leftInd++] : rightArr[rightInd++];
 
         return result;
     }
