@@ -38,11 +38,9 @@ public class ex_1 {
                 case 1:
                     Write(phonebook);
                     break;
-
                 case 2:
                     Read(phonebook);
                     break;
-
                 default:
                     System.out.println("Некорректный ввод");
                     return;
