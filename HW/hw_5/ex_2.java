@@ -49,14 +49,16 @@ public class ex_2 {
             else
                 namesDict.put((String) Array.get(name.split(" "), 0), 1);
         }
+        //Делаем сортировку с реверсом
         countNamesDict  = namesDict.entrySet()
-        .stream()
-        .sorted(reverseOrder(Map.Entry.comparingByValue()))
-        .collect(Collectors
-        .toMap(Map.Entry::getKey,
-               Map.Entry::getValue,
-               (e1, e2) -> e1,
-               LinkedHashMap::new));
+                                            .stream()
+                                            .sorted(reverseOrder(Map.Entry.comparingByValue()))
+                                            .collect(Collectors
+                                            .toMap(Map.Entry::getKey,
+                                                    Map.Entry::getValue,
+                                                    (e1, e2) -> e1,
+                                                    LinkedHashMap::new));
+                                                    
         for (var item : countNamesDict.entrySet()) {
             System.out.println(item.getKey() + " " + item.getValue());
         }

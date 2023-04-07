@@ -48,7 +48,7 @@ public class ex_1 {
         }
 
     }
-
+    //Метод для записи в книгу
     public static void Write(Map<String, ArrayList<String>> phonebook) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите фамилию:");
@@ -65,7 +65,7 @@ public class ex_1 {
             phonebook.put(lastName, temp);
         }
     }
-
+    //Метод для чтения из книги
     public static void Read(Map<String, ArrayList<String>> phonebook) {
         for (var items : phonebook.entrySet()) {
             System.out.println(items.getKey() + " " + items.getValue());
