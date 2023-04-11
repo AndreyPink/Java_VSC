@@ -51,9 +51,9 @@ public class ex_1 {
         custom.put("hdd", 0);
         custom.put("os", "");
         custom.put("color", "");
-        System.out.println("\nПриступаем к подбору оптимальной модели ноутбука\n");
+        System.out.println("\nПриступаем к подбору оптимальной модели ноутбука");
         while (true) {
-            System.out.println("1. Объем RAM");
+            System.out.println("\n1. Объем RAM");
             System.out.println("2. Объем HDD");
             System.out.println("3. OS");
             System.out.println("4. Цвет");
