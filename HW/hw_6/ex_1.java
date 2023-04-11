@@ -72,7 +72,7 @@ public class ex_1 {
                 case 2:
                     System.out.println("\nВведите минимальный объем HDD: ");
                     int hdd = sc.nextInt();
-                    custom.put("hdd", (Integer) hdd);
+                    custom.put("hdd", hdd);
                     break;
 
                 case 3:
