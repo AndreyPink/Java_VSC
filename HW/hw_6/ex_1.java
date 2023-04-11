@@ -51,7 +51,7 @@ public class ex_1 {
         custom.put("hdd", 0);
         custom.put("os", "");
         custom.put("color", "");
-        System.out.println("Приступаем к подбору оптимальной модели ноутбука\n");
+        System.out.println("\nПриступаем к подбору оптимальной модели ноутбука\n");
         while (true) {
             System.out.println("1. Объем RAM");
             System.out.println("2. Объем HDD");
@@ -64,19 +64,19 @@ public class ex_1 {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Введите минимальный объем RAM: ");
+                    System.out.println("\nВведите минимальный объем RAM: ");
                     int ram = sc.nextInt();
                     custom.put("ram", ram);
                     break;
 
                 case 2:
-                    System.out.println("Введите минимальный объем HDD: ");
+                    System.out.println("\nВведите минимальный объем HDD: ");
                     int hdd = sc.nextInt();
                     custom.put("hdd", (Integer) hdd);
                     break;
 
                 case 3:
-                    System.out.println("Выберите OS из списка\n");
+                    System.out.println("\nВыберите OS из списка\n");
                     System.out.println("1. Windows");
                     System.out.println("2. Linux");
                     System.out.println("3. MacOs");
@@ -99,7 +99,7 @@ public class ex_1 {
                     break;
 
                 case 4:
-                    System.out.println("Выберите цвет из списка\n");
+                    System.out.println("\nВыберите цвет из списка\n");
                     System.out.println("1. Серебряный");
                     System.out.println("2. Белый");
                     System.out.println("3. Черный");
@@ -150,7 +150,7 @@ public class ex_1 {
         if (result.size() == 0)
             System.out.println("Ноутбук под ваши параметры не найден.");
         else {
-            System.out.println("Под ваши параметры подойдут следующие ноутбуки:");
+            System.out.println("\nПод ваши параметры подойдут следующие ноутбуки:");
             for (int index = 0; index < result.size(); index++) {
                 System.out.println(result.get(index));
             }
