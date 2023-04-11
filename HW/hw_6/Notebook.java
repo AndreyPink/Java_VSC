@@ -17,7 +17,7 @@ public class Notebook {
 
 @Override
 public String toString() {
-    return String.format("%s, %f, %f, %s, %s", this.brand, this.ram, this.hdd, this.os, this.color);
+    return ("brand: " + this.brand + "; ram: " + this.ram + "; hdd: " + this.hdd + "; os: " + this.os + "; color: " + this.color);
 }
 
 public String getBrandName() {
