@@ -57,7 +57,7 @@ public class ex_1 {
             System.out.println("2. Объем HDD");
             System.out.println("3. OS");
             System.out.println("4. Цвет");
-            System.out.println("0. Завершить фильтрацию и вывести подходящую модель ");
+            System.out.println("0. Завершить подбор и вывести подходящую модель ");
             System.out.println("Введите цифру, соответствующую необходимому критерию: ");
 
             int choice = sc.nextInt();
