@@ -99,27 +99,27 @@ public class ex_1 {
                     break;
 
                 case 4:
-                System.out.println("Выберите цвет из списка\n");
-                System.out.println("1. Серебряный");
-                System.out.println("2. Белый");
-                System.out.println("3. Черный");
-                System.out.println("Введите цифру, соответствующую необходимому критерию: ");
-                int choiceColor = sc.nextInt();
-                switch (choiceColor) {
-                    case 1:
-                        custom.put("color", "silver");
-                        break;
-                    case 2:
-                        custom.put("color", "white");
-                        break;
-                    case 3:
-                        custom.put("color", "black");
-                        break;
-                    default:
-                        System.out.println("Ошибка выбора");
-                        break;
-                }
-                break;
+                    System.out.println("Выберите цвет из списка\n");
+                    System.out.println("1. Серебряный");
+                    System.out.println("2. Белый");
+                    System.out.println("3. Черный");
+                    System.out.println("Введите цифру, соответствующую необходимому критерию: ");
+                    int choiceColor = sc.nextInt();
+                    switch (choiceColor) {
+                        case 1:
+                            custom.put("color", "silver");
+                            break;
+                        case 2:
+                            custom.put("color", "white");
+                            break;
+                        case 3:
+                            custom.put("color", "black");
+                            break;
+                        default:
+                            System.out.println("Ошибка выбора");
+                            break;
+                    }
+                    break;
 
                 case 0:
                     sc.close();
@@ -131,7 +131,7 @@ public class ex_1 {
             }
 
         }
-        
+
     }
 
     public static void choiseNotebook(ArrayList<Notebook> list, HashMap<String, Object> filter) {
@@ -140,10 +140,10 @@ public class ex_1 {
             if (list.get(i).getRam() > (Integer) filter.get("ram") &&
                     list.get(i).getHdd() > (Integer) filter.get("hdd") &&
                     (list.get(i).getOs().equals((String) filter.get("os"))
-                    || filter.get("os").equals("")) &&
+                            || filter.get("os").equals(""))
+                    &&
                     (list.get(i).getColor().equals((String) filter.get("color"))
-                    || filter.get("color").equals("")))
-                     {
+                            || filter.get("color").equals(""))) {
                 result.add(list.get(i));
             }
         }
