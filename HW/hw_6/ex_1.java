@@ -137,8 +137,8 @@ public class ex_1 {
     public static void choiseNotebook(ArrayList<Notebook> list, HashMap<String, Object> filter) {
         ArrayList<Notebook> result = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getRam() > (Integer) filter.get("ram") &&
-                    list.get(i).getHdd() > (Integer) filter.get("hdd") &&
+            if (list.get(i).getRam() >= (Integer) filter.get("ram") &&
+                    list.get(i).getHdd() >= (Integer) filter.get("hdd") &&
                     (list.get(i).getOs().equals((String) filter.get("os"))
                             || filter.get("os").equals(""))
                     &&
