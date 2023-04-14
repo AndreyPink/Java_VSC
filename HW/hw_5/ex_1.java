@@ -46,7 +46,6 @@ public class ex_1 {
                     return;
             }
         }
-
     }
     //Метод для записи в книгу
     public static void Write(Map<String, ArrayList<String>> phonebook) {
