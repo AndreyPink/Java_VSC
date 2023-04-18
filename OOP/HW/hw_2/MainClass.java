@@ -2,11 +2,6 @@ package OOP.HW.hw_2;
 
 import java.util.Random;
 
-// Если в методе main() создать объекты этих классов, то можно узнать информацию о тарелке и
-
-// вызвать пустой метод eat() у кота. Эти объекты пока никак не могут взаимодействовать между собой.
-// Можно добавить в классы геттеры и сеттеры и получить код вроде.
-
 public class MainClass {
     public static void main(String[] args) {
         Random rand = new Random();
