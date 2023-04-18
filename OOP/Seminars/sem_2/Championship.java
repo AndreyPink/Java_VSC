@@ -1,6 +1,6 @@
 package OOP.Seminars.sem_2;
 
-public class ex_2 {
+public class Championship {
 
     public static void main(String[] args) {
         
