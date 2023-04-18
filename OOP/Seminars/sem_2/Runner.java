@@ -1,6 +1,6 @@
 package OOP.Seminars.sem_2;
 
-public interface Runnable {
+public interface Runner {
 
 /**
  * Jump

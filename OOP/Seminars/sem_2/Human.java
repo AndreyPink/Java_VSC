@@ -1,6 +1,6 @@
 package OOP.Seminars.sem_2;
 
-public class Human implements Runnable{
+public class Human implements Runner{
 
     private String name;
     private int maxRun;

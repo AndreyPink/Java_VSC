@@ -1,6 +1,6 @@
 package OOP.Seminars.sem_2;
 
-public class Robot implements Runnable{
+public class Robot implements Runner{
 
     private String name;
     private int maxRun;

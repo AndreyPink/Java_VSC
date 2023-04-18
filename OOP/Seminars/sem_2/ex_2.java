@@ -14,13 +14,13 @@ public class ex_2 {
         new Wall(4),
     };
 
-    Runnable[] runnables = {
+    Runner[] runnables = {
         new Robot("Rob", 5000, 3),
         new Human("Chel", 2500, 2),
         new Leon("Bars", 10000, 5)
     };
 
-for (Runnable runnable : runnables) {
+for (Runner runnable : runnables) {
     for (Obstacle obstacle : obstacles) {
         if (obstacle instanceof Track) {
             if(!runnable.run(obstacle.getLength()))

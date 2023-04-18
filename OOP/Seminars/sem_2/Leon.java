@@ -1,6 +1,6 @@
 package OOP.Seminars.sem_2;
 
-public class Leon implements Runnable{
+public class Leon implements Runner{
 
     private String name;
     private int maxRun;
