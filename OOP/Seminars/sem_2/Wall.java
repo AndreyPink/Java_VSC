@@ -3,7 +3,7 @@ package OOP.Seminars.sem_2;
 public class Wall implements Obstacle {
 
     private int height;
-    private int length;
+    private int length = 0;
     
 
 

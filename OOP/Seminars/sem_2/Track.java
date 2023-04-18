@@ -3,7 +3,7 @@ package OOP.Seminars.sem_2;
 public class Track implements Obstacle {
 
 private int length;
-private int height;
+private int height = 0;
 
 
 
