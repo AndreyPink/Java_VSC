@@ -1,7 +1,6 @@
 package temples;
 
 
-
 public class shuffle {
 
     public static void main(String[] args) {
@@ -10,7 +9,7 @@ public class shuffle {
         char[] resultArray = new char[str.length()];
 
         for (int i = 0; i < str.length(); i++) {
-            resultArray[index[i]-1] = str.toCharArray()[i];  //str.charAt(i) //str.substring(i, i)
+            resultArray[index[i]-1] = str.toCharArray()[i];  //str.charAt(i) //str.substring(i, i) cba = c + b + a
         }
         str = "";
         for (char c : resultArray) {
@@ -19,5 +18,5 @@ public class shuffle {
         System.out.println(str);
 
     }
-}
 
+}
