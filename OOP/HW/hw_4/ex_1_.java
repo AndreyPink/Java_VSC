@@ -1,24 +1,10 @@
-// a. Даны классы Fruit, Apple extends Fruit, Orange extends Fruit;
-// b. Класс Box, в который можно складывать фрукты. Коробки условно сортируются по типу фрукта,
-// поэтому в одну коробку нельзя сложить и яблоки, и апельсины;
-// c. Для хранения фруктов внутри коробки можно использовать ArrayList;
-// d. Сделать метод getWeight(), который высчитывает вес коробки, зная вес одного фрукта и их количество:
-// вес яблока – 1.0f, апельсина – 1.5f (единицы измерения не важны);
-// e. Внутри класса Box сделать метод compare(), который позволяет сравнить текущую коробку с той, которую
-// подадут в compare() в качестве параметра. true – если их массы равны, false в противоположном случае.
-// Можно сравнивать коробки с яблоками и апельсинами;
-// f. Написать метод, который позволяет пересыпать фрукты из текущей коробки в другую.
-// Помним про сортировку фруктов: нельзя яблоки высыпать в коробку с апельсинами.
-// Соответственно, в текущей коробке фруктов не остается, а в другую перекидываются объекты, которые были в первой;
-// g. Не забываем про метод добавления фрукта в коробку.
-
 package OOP.HW.hw_4;
 
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ex_1 {
+public class ex_1_ {
 
 public static Random rand = new Random();
 
@@ -45,14 +31,25 @@ public static void boxCompare(Box<?> b1, Box<?> b2){
     else System.out.println("вес коробок разный");
 }
 
-public static void shiftFruBox(Box<?> b1, Box<?> b2){
-    System.out.printf("\nПробуем пересыпать фрукты из коробки №%d в №%d:\n", b1.getId(), b2.getId());
-    if((b1.name).equals(b2.name)){
-    b2.setWeight(b1.weight + b2.weight);
-    b1.weight = 0;
-    System.out.printf("Коробка №%d опустела, вес коробки №%d - %.2f кг\n\n", b1.getId(), b2.getId(), b1.weight + b2.weight);
+
+public static void shiftBox(Box b1, Box b2){
+    System.out.printf("\nПересыпаем фрукты из коробки №%d в №%d:\n", b1.getId(), b2.getId());
+    if ((b1.name.equals(b2.name) || b2.name.equals("пусто")) && b1.fruits.size() > 0) {
+    
+            for (int i = b1.fruits.size()-1; i > 0; i--) {
+                b2.fruits.add(b1.fruits.get(0));
+                b1.fruits.remove(i);
+            }
+            b2.fruits.add(b1.fruits.get(0));
+            b1.fruits.remove(0);
+
+    System.out.printf("Коробка №%d опустела, вес коробки №%d - %.2f кг\n\n", b1.getId(), b2.getId(), b2.getWeight());
+    b1.setWeight(0);
+    b2.name = b1.name;
+    b1.name = "пусто";
+    b2.setWeight(b2.getWeight());
     }
-    else System.out.println("Это коробки с разными фруктами, пересыпать нельзя\n");
+    else System.out.println("Это коробки с разными фруктами или первая коробка пустая, пересыпать нельзя\n");
 }
 
     public static void main(String[] args) {
@@ -70,14 +67,28 @@ System.out.println(box4);
 boxCompare(box1, box4);
 boxCompare(box2, box3);
 
-shiftFruBox(box1, box4);
-
-shiftFruBox(box3, box4);
+shiftBox(box1, box2);
+shiftBox(box3, box4);
 
 System.out.println(box1);
 System.out.println(box2);
 System.out.println(box3);
 System.out.println(box4);
+
+shiftBox(box2, box1);
+
+System.out.println(box1);
+System.out.println(box2);
+System.out.println(box3);
+System.out.println(box4);
+
+shiftBox(box1, box3);
+
+System.out.println(box1);
+System.out.println(box2);
+System.out.println(box3);
+System.out.println(box4);
+
 
     }
 
@@ -130,7 +141,10 @@ class Box<T extends Fruit> {
 
     public Box(ArrayList<T> fruits) {
         this.fruits = fruits;
-        this.name = fruits.get(0).getName();
+        if(fruits.isEmpty())
+            this.name = "пусто";
+        else
+            this.name = fruits.get(0).getName();
         this.id = counter.getAndIncrement();
         this.weight = getWeight();
     }
