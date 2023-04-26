@@ -6,7 +6,6 @@ public class ex_1 {
 
     public static void main(String[] args) {
         SimpleAccount simpleAccount = new SimpleAccount(5, 1000.15);
-        int simpleAccountId = simpleAccount.getId();
         System.out.println(simpleAccount);
 
         UniversalAccount universalAccount1 = new UniversalAccount("AA11BB", 1100.15);
@@ -20,7 +19,6 @@ public class ex_1 {
 
         Account<Integer> account1 = new Account<>(5001, 1100.15);
         System.out.println(account1);
-        int account1Id = account1.getId();
 
         Account<CustomAccountIdentifier> account2 = new Account<>(identifier, 1000);
         System.out.println(account2);

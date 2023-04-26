@@ -3,10 +3,10 @@ package OOP.Seminars.sem_3;
 public class ex_1 {
     public static void main(String[] args) {
 
-        Cat cat1 = new Cat("Cat1", 10);
-        Dog dog1 = new Dog("Dog1", 20, 30);
-        Animal animal1 = new Animal("Animal1", 30, 20);
-        Animal animal2 = new Animal("Animal2", 25, 35);
+        // Cat cat1 = new Cat("Cat1", 10);
+        // Dog dog1 = new Dog("Dog1", 20, 30);
+        // Animal animal1 = new Animal("Animal1", 30, 20);
+        // Animal animal2 = new Animal("Animal2", 25, 35);
 
         System.out.printf("Общее кол-во животных: %d\n", Animal.getCounter());
         System.out.printf("Общее кол-во котов: %d\n", Cat.getCounter());
