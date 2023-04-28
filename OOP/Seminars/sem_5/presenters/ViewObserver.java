@@ -1,6 +1,8 @@
 package OOP.Seminars.sem_5.presenters;
 
+import java.util.Date;
+
 public interface ViewObserver {
     
-    void onReservationTable(Data orderDate, int tableNo, String name);
+    void onReservationTable(Date orderDate, int tableNo, String name);
 }

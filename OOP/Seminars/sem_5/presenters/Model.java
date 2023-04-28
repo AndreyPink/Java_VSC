@@ -1,10 +1,25 @@
 package OOP.Seminars.sem_5.presenters;
 
 import java.util.Collection;
+import java.util.Date;
 
 import OOP.Seminars.sem_5.models.Table;
 
 public interface Model {
-    
+
+    /**
+     * Получение всех доступных столиков
+     * @return столики
+     */
     Collection<Table> loadTables();
+
+    /**
+     * Бронирование столика
+     * @param reservationDate дата бронирования
+     * @param tableNo номер столика
+     * @param name имя клиента
+     * @return номер брони
+     */
+    int reservationTable(Date reservationDate, int tableNo, String name);
+
 }
