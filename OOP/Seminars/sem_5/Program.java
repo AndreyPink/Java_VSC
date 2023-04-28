@@ -7,7 +7,7 @@ import OOP.Seminars.sem_5.models.TableModel;
 import OOP.Seminars.sem_5.presenters.BookingPresenter;
 import OOP.Seminars.sem_5.views.BookingView;
 
-public class ex_1 {
+public class Program {
     /**
      * @param args аргументы командной строки
      */
