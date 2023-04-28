@@ -12,12 +12,9 @@ public class BookingView implements View {
 
 
     private ViewObserver observer;
+    static int tableNN;
+    static String clientName;
 
-
-    /**
-     * Отобразить список столиков
-     * @param tables список столиков
-     */
     public void showTables(Collection<Table> tables){
         System.out.println("\nДоступные столы для бронирования:");
         for (Table table: tables){
@@ -25,54 +22,36 @@ public class BookingView implements View {
         }
     }
 
-    /**
-     * Отобразить результат бронирования
-     * @param reservationNo номер брони
-     */
     @Override
     public void showReservationStatus(int reservationNo) {
         if (reservationNo > 0){
-            System.out.printf("Столик %d успешно забронирован. Номер брони: #%d\n", tableNN, reservationNo);
+            System.out.printf("\nСтолик %d на имя %s успешно забронирован. Номер брони: #%d\n", tableNN, clientName, reservationNo);
         }
         else {
-            System.out.println("Ошибка бронирования столика.");
+            System.out.println("\nОшибка бронирования столика.");
         }
     }
 
-    /**
-     * Установить наблюдателя
-     * @param observer наблюдатель (презентер)
-     */
     @Override
     public void setObserver(ViewObserver observer) {
         this.observer = observer;
     }
-    static int tableNN;
-    /**
-     * Действие клиента (пользователь нажал на кнопку бронирования),
-     * бронирование столика
-     * @param orderDate дата бронирования
-     * @param tableNo номер столика
-     * @param name имя клиента
-     */
+
     public void reservationTable(Date orderDate, int tableNo, String name){
         tableNN = tableNo;
+        clientName = name;
         observer.onReservationTable(orderDate, tableNo, name);
         
     }
 
-    /**
-     * Действие клиента (пользователь нажал на кнопку бронирования), бронирование столика
-     * @param oldReservation идентификатор бронирования (старый)
-     * @param reservationDate дата бронирования
-     * @param tableNo номер столика
-     * @param name Имя
-     */
     public void changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name){
         tableNN = tableNo;
+        clientName = name;
         observer.onChangeReservationTable(oldReservation, reservationDate, tableNo, name);
     }
 
-
+    public void deleteReservation(int oldReservation){
+        observer.deleteReservation(oldReservation);
+    }
 
 }

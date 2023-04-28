@@ -8,9 +8,7 @@ import OOP.Seminars.sem_5.presenters.BookingPresenter;
 import OOP.Seminars.sem_5.views.BookingView;
 
 public class Program {
-    /**
-     * @param args аргументы командной строки
-     */
+
     public static void main(String[] args) {
         TableModel tableModel = new TableModel();
         BookingView bookingView = new BookingView();
@@ -23,13 +21,15 @@ public class Program {
             System.out.println("1. Просмотреть список свободных столов");
             System.out.println("2. Забронировать столик");
             System.out.println("3. Изменить бронирование стола");
-            System.out.println("4. Завершить бронирование");
+            System.out.println("4. Отменить бронирование стола");
+            System.out.println("5. Завершить бронирование");
 
             Scanner sc = new Scanner(System.in);
             int action = sc.nextInt();
 
             int tableNum;
             String clientName;
+            int res;
 
             switch (action) {
                 case 1:
@@ -37,7 +37,7 @@ public class Program {
                     break;
 
                 case 2:
-                System.out.println("Введите номер свободного столика:");
+                System.out.println("\nВведите номер свободного столика:");
                 tableNum = sc.nextInt();
                 System.out.println("Введите ваше Имя:");
                 clientName = sc.next();
@@ -45,8 +45,8 @@ public class Program {
                     break;
 
                 case 3:
-                System.out.println("Введите номер резервации:");
-                int res = sc.nextInt();
+                System.out.println("\nВведите номер резервации:");
+                res = sc.nextInt();
                 System.out.println("Введите номер свободного столика:");
                 tableNum = sc.nextInt();
                 System.out.println("Введите ваше Имя:");
@@ -55,10 +55,20 @@ public class Program {
                     break;
 
                 case 4:
+                System.out.println("\nВведите номер резервации:");
+                res = sc.nextInt();
+                bookingView.deleteReservation(res);
+                    break;
+
+                case 5:
+                sc.close();
                     return;
 
                 default:
+                sc.close();
                     break;
+
+                    
             }
 
         }

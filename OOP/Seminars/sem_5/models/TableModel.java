@@ -31,30 +31,31 @@ public class TableModel implements Model {
             if (table.getNo() == tableNo) {
                 Reservation reservation = new Reservation(reservationDate, name);
                 table.getReservations().add(reservation);
-                tables.remove(table); // удаление столика из массива столиков
+                tables.remove(table); 
                 reservationMap.put(reservation.getId(), table);
                 return reservation.getId();
             }
         }
         return -1;
-        // throw new RuntimeException("Некорректный номер столика");
     }
 
-    /**
-     * Поменять бронь столика
-     * 
-     * @param oldReservation  номер старого резерва (для снятия)
-     * @param reservationDate дата резерва столика
-     * @param tableNo         номер столика
-     * @param name            Имя
-     */
     public int changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
         if (reservationMap.containsKey(oldReservation)){
         tables.add(new Table(reservationMap.get(oldReservation).no));
+        reservationMap.remove(oldReservation);
         return reservationTable(reservationDate, tableNo, name);
         }
         return -1;
     }
 
-    
+    public void deleteReservation(int oldReservation){
+        if (reservationMap.containsKey(oldReservation)){
+            tables.add(new Table(reservationMap.get(oldReservation).no));
+            System.out.printf("\nРезерв снят, столик #%d освободился", reservationMap.get(oldReservation).no); 
+            reservationMap.remove(oldReservation);
+            }
+           else System.out.println("\nТакого номера резерва не существует");
+    }
+
+
 }
