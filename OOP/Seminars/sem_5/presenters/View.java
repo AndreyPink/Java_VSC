@@ -5,6 +5,7 @@ import java.util.Collection;
 import OOP.Seminars.sem_5.models.Table;
 
 public interface View {
+
     /**
      * Отобразить список всех столиков
      * @param tables список столиков
@@ -12,6 +13,7 @@ public interface View {
     void showTables(Collection<Table> tables);
 
     void showReservationStatus(int reservationNo);
+    
 
     /**
      * Установить нового наблюдателя

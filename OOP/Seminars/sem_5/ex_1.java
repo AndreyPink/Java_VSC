@@ -1,27 +1,69 @@
 package OOP.Seminars.sem_5;
 
 import java.util.Date;
+import java.util.Scanner;
 
 import OOP.Seminars.sem_5.models.TableModel;
 import OOP.Seminars.sem_5.presenters.BookingPresenter;
 import OOP.Seminars.sem_5.views.BookingView;
 
-public class ex_1 { /**
-    * TODO: ДОМАШНЯЯ РАБОТА
-    * Метод changeReservationTable должен ЗАРАБОТАТЬ!
-    *
-    * @param args аргументы командной строки
-    */
-   public static void main(String[] args) {
-       TableModel tableModel = new TableModel();
-       BookingView bookingView = new BookingView();
-       BookingPresenter bookingPresenter = new BookingPresenter(tableModel, bookingView);
-       bookingPresenter.loadTables();
-       bookingPresenter.updateView();
+public class ex_1 {
+    /**
+     * @param args аргументы командной строки
+     */
+    public static void main(String[] args) {
+        TableModel tableModel = new TableModel();
+        BookingView bookingView = new BookingView();
+        BookingPresenter bookingPresenter = new BookingPresenter(tableModel, bookingView);
+        bookingPresenter.loadTables();
 
-       bookingView.reservationTable(new Date(), 3, "Станислав");
+        while (true) {
 
-       bookingView.changeReservationTable(1001, new Date(), 2, "Станислав");
-   }
+            System.out.println("\nВыберете действие: ");
+            System.out.println("1. Просмотреть список свободных столов");
+            System.out.println("2. Забронировать столик");
+            System.out.println("3. Изменить бронирование стола");
+            System.out.println("4. Завершить бронирование");
+
+            Scanner sc = new Scanner(System.in);
+            int action = sc.nextInt();
+
+            int tableNum;
+            String clientName;
+
+            switch (action) {
+                case 1:
+                bookingPresenter.updateView();
+                    break;
+
+                case 2:
+                System.out.println("Введите номер свободного столика:");
+                tableNum = sc.nextInt();
+                System.out.println("Введите ваше Имя:");
+                clientName = sc.next();
+                bookingView.reservationTable(new Date(), tableNum, clientName);
+                    break;
+
+                case 3:
+                System.out.println("Введите номер резервации:");
+                int res = sc.nextInt();
+                System.out.println("Введите номер свободного столика:");
+                tableNum = sc.nextInt();
+                System.out.println("Введите ваше Имя:");
+                clientName = sc.next();
+                bookingView.changeReservationTable(res, new Date(), tableNum, clientName);
+                    break;
+
+                case 4:
+                    return;
+
+                default:
+                    break;
+            }
+
+        }
+
+    }
+
 
 }

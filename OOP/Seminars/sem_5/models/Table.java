@@ -10,11 +10,19 @@ public class Table {
     private static int counter;
 
     private final Collection<Reservation> reservations = new ArrayList<>();
-    private final int no;
+    protected int no;
+
+    public Table(int no) {
+        this.no = no;
+    }
+
+    public Table() {
+    }
 
     {
         no = ++counter;
     }
+    
 
     public int getNo() {
         return no;

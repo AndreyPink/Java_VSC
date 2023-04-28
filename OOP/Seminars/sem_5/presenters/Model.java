@@ -22,4 +22,10 @@ public interface Model {
      */
     int reservationTable(Date reservationDate, int tableNo, String name);
 
+    int changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name);
+
+    
+
+
+
 }
