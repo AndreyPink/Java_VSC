@@ -1,4 +1,4 @@
-package OOP.Seminars.sem_6;
+package ru.geekbrains.lesson7;
 
 public class Program {
 
