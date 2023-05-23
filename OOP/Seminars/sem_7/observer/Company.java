@@ -23,9 +23,9 @@ public class Company implements CreateVacancy{
      */
 
        public void needEmployee(){
-        Vacancy vac = createVacancy();
+        String vac = createVacancy();
         double salary = random.nextDouble(3000, maxSalary);
-        jobAgency.sendOffer(vac.nameVacancy, nameCompany, salary);
+        jobAgency.sendOffer(vac, nameCompany, salary);
     }
 
 }
