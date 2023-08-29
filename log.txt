@@ -1,0 +1,26 @@
+мая 25, 2023 3:32:51 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: element: 
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+WARNING: logger off
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+INFO: test
+мая 25, 2023 3:32:52 PM Seminars.sem_3.logger main
+WARNING: logsPath
